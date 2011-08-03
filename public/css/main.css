@@ -92,7 +92,10 @@ ul, li {
   list-style-type: none;
 }
 code {
+  display: block;
   font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
+  white-space: pre;
+  padding: 20px;
 }
 pre {
   padding: 20px;

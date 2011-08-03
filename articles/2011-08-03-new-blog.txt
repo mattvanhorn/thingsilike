@@ -1,0 +1,11 @@
+title: New Blog
+author: Matt Van Horn
+date: 2011/08/03
+
+I finally decided to stop using Wordpress for this blog, and am now using [Toto](https://github.com/cloudhead/toto).
+
+It was very easy to get it up and running on Heroku, using [instructions](http://www.rubyinside.com/deploy-blog-with-toto-and-heroku-2962.html "Deploy A Free, Ruby Powered Blog In 5 Minutes with Toto and Heroku") I found at [Ruby Inside](http://www.rubyinside.com "Ruby Inside: The Ruby Blog").
+
+I also found [this article](http://patshaughnessy.net/2011/1/23/4-tips-for-how-to-customize-a-toto-blog-site "4 tips for how to customize a Toto blog site - Pat Shaughnessy") on ways to customize it, although I'm not taking advantage of this fully, at the moment.
+
+I've never been much of a blogger, but I'm hoping the simplicity of this setup makes it easier for me to write quick posts like this one about things I like.

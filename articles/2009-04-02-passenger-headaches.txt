@@ -1,0 +1,23 @@
+title: Passenger Headaches
+author: Matt Van Horn
+date: 2009/04/02
+
+I've been using <a href="http://blog.phusion.nl/">Phusion Passenger</a> and Apache2 for a little while as <a href="http://www.fuzzylizard.com/archives/2008/05/29/947/">my development setup</a>, since it is hassle free for setting up apps and switching between them. I don't miss typing ./script/server 100 times a day at all.
+However, Over the last couple of weeks I've run into a few issues that sidetracked me for more time than they were worth.
+
+First, I realized that one of my apps that was using <a href="http://www.thoughtbot.com/projects/paperclip">Thoughtbot's Paperclip</a> for attachments was no longer making thumbnails, and it wasn't giving me an errors either. In case you are having this problem too, here's the cause and solution (<a href="https://groups.google.com/group/paperclip-plugin/browse_thread/thread/42eb7f12562faf3a?pli=1">as found here</a>.)
+Apparently mod_rails apps run as the same user as Apache so whatever is in your personal $PATH doesn't carry over. Therefore it is not finding the ImageMagick binaries.
+The solution is to create an initializers/paperclip_config.rb file something like:
+<code>if RAILS_ENV == "development"
+Paperclip.options[:image_magick_path] = '/opt/local/bin/'
+else
+Paperclip.options[:image_magick_path] = '/usr/bin/'
+end</code>
+Now it can find the programs it needs for the thumbnails, and you're back in business.
+
+The next issue I ran into was with <a href="http://github.com/binarylogic/authlogic/tree/master">Authlogic</a>, which is my current favorite authentication solution.
+Apparently, when using Passenger 2.0.6 with Rails 2.3.2 and using the cookie session store, you are prevented from logging out. I'm not sure why, but <a href="http://github.com/binarylogic/authlogic/commit/495e95e5a2f724e6f1e339c4871168c6c5e6a7ca">the solution</a> is either to use the ActiveRecord session, or to upgrade to 2.2.1+ which is what worked for me.
+
+Now, today I hit another little glitch when using the <a href="http://code.google.com/p/ruby-ole/downloads/list">ruby-ole</a> and <a href="http://rubyforge.org/projects/spreadsheet/">spreadsheet</a> gems. The gem uses the ruby logger writing to STDERR by default, and it seems that while Mongrel can route the log messages to the right place, Passenger just throws a "stream closed" error. The solution was just to add the following line to environment.rb 
+<code>Ole::Log = RAILS_DEFAULT_LOGGER</code>
+Simple enough, but it took me a long time (and a coworker's input) to realize what was going on.
