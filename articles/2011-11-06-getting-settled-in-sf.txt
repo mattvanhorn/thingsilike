@@ -1,6 +1,7 @@
 title: Getting Settled In San Francisco
 author: Matt Van Horn
 date: 2011/11/06
+slug: getting-settled-in-sf
 
 I've been in San Francisco for about a month now, and I am finally starting to
 feel like I am getting settled. I've mostly adjusted to the changes in my job, 
