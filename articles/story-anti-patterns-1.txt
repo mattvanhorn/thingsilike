@@ -39,7 +39,8 @@ This is an example of thinking about "what do I want the user to do?" instead of
   If the demo gets rescheduled two weeks earlier, there's a good chance you won't be able to show many features in a complete state.
   Punchlists that need to be completed in order to deploy is the opposite of agile practice.
   
-  Another issue this pattern leads to is programmers waiting on designers, or vice versa. Again - not very agile.
+  Another issue this pattern leads to is programmers waiting on designers, or vice versa. Again - not very agile. This fosters
+  an us-vs-them mentality that is inimical to getting things done.
   
   Lastly, when software development is iterating, but UI design and/or production is handled as a page-at-a-time waterfall, 
   the mismatch leads to gross inefficiencies in how the look & feel gets implemented - bloated CSS, endless tweaking of styles, etc.
@@ -70,10 +71,25 @@ The above story could become:
   > And the page should be styled according to the current design specifications for the product page
 
 Notice that there are no implementation details exposed in the story or scenario. This prevents brittle tests. 
-If what is meant by "product details" changes, this is a change in requirements that will force a change in
-the implementation of the step, but not a change in the story.
+The feature is written from a user's point of view, and doesn't concern itself with what the developers consider details,
+or what the designers mean by well-designed.
+
+If what is meant by "product details" changes, this is a change in requirements that will correctly force a change in
+the implementation of the step. However, the feature itself does not need to change, since it is value-driven and focused on the 
+user's needs. Ideally, what is meant by product details should be centralized, and changed only in one place to update all
+the features that rely on it.
+
 The last step could be implemented using matchers for such ui requirements as:
 All headlines should be blue, and all body copy should be 16px high. This then becomes a reusable step that can
 help catch look & feel flaws on other pages, as well.
+It can be argued that tests for this sort of thing are excessive, since look and feel changes so often, and maintaining these
+tests creates a lot of overhead. I think that perhaps the overhead would encourage more consideration of changes, since the actual
+cost of doing them correctly becomes exposed. The alternative is to not care whether the look and feel is correct - if you do care, 
+there is work to be done to ensure correctness, whether it is automated or (like most teams) manually reviewed by designers working 
+over the shoulders of developers, nearly doubling the overhead costs.
 
+### Iterative UI design
 
+There's not enough space or time to go into a full discussion of agile UI development here. I wish there were more resources 
+online, but unfortunately there is not a lot written on the topic. Briefly, though, UI development should follow many of
+the same principles as software development.
