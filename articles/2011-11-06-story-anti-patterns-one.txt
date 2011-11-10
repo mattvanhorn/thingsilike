@@ -1,5 +1,5 @@
 title: Story Anti-Patterns 1
-slug: story-anti-patterns-1
+slug: story-anti-patterns-one
 author: Matt Van Horn
 date: 2011/11/06
 
