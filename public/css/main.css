@@ -43,8 +43,8 @@ a:hover {
   text-decoration: underline;
 }
 body > header > h1 {
-	border-left: 30px solid black;
-	padding-left: 30px;
+  border-left: 30px solid black;
+  padding-left: 30px;
   font-size: 201px;
   margin: 100px 0 15px 0;
   font-weight: normal;
@@ -84,7 +84,6 @@ body > header {
 	margin-bottom: 20px;
 }
 h1, h2, h3, h4 {
-  display: inline;
   margin: 0;
   font-weight: 600;
 }
@@ -103,11 +102,25 @@ pre {
 blockquote {
   font-style: italic;
 }
-
 body > footer {
   text-align: left;
   margin-left: 10px;
 	font-style: italic;
   font-size: 18px;
   color: #888;
+}
+.content h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+.content h2 {
+    font-size: 1.5em;
+    margin: 0.75em 0 0.5em;
+}
+.content h3 {
+    font-size: 1.2em;
+    margin: 1em 0 0.5em;
+}
+.content h4 {
+    font-size: 1em;
 }

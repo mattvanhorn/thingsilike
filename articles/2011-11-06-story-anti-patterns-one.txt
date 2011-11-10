@@ -65,14 +65,14 @@ Story templates need to show three important things:
 
 The above story could become:
 
-  > In order to _**more easily make a purchase decision**_  
-  > _**the customer**_  
-  > wants to see _**a well-designed product details page**_
-  > 
-  > Given an existing product named "Foo"  
-  > When the customer visits the product page for "Foo"  
-  > Then the customer should see the product details for "Foo"  
-  > And the page should be styled according to the current design specifications for the product page
+  In order to _**more easily make a purchase decision**_
+  _**the customer**_
+  wants to see _**a well-designed product details page**_
+  
+  Given an existing product named "Foo"
+  When the customer visits the product page for "Foo"
+  Then the customer should see the product details for "Foo"
+  And the page should be styled according to the current design specifications for the product page
 
 Notice that there are no implementation details exposed in the story or scenario. This prevents brittle tests. 
 The feature is written from a user's point of view, and doesn't concern itself with what the developers consider details,
@@ -99,7 +99,6 @@ online, but unfortunately there is not a lot written on the topic. Briefly, thou
 the same principles as software development. The UI design can and should be developed in an organic, iterative fashion.
 Stories should be deployed as they are completed - in this system you'll never hear "the story is done, but we can't deploy it until 
 the UI is finished."
-
 
 ### No More Us-And-Them
 
