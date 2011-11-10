@@ -63,9 +63,9 @@ the mismatch leads to gross inefficiencies in how the look & feel gets implement
 
 Story templates need to show three important things:
 
-* Business value
-* The role that benefits from the value
-* The feature necessary to provide the value
+* Business **value**
+* The **role** that benefits from the value
+* The **feature** necessary to provide the value
 
 The above story could become:
 
