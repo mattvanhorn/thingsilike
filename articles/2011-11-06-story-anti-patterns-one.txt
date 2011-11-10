@@ -24,9 +24,9 @@ This is the first in a series, where I describe some common mistakes made when t
 
 ## Example 2 - _all the business value attached to the wrong thing for the wrong role_
 > ### Typical Story
->> As the designer
->> I want a well-designed product page
->> In order to encourage purchases
+>> As the designer  
+>> I want a well-designed product page  
+>> In order to encourage purchases  
 
 
 Here, the team is trying to find the value, but they are looking in the wrong place for it.
