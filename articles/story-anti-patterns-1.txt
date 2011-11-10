@@ -3,6 +3,9 @@ slug: story-anti-patterns-1
 author: Matt Van Horn
 date: 2011/11/06
 
+This is the first in a series, where I describe some common mistakes made when trying to run an agile team.
+~
+
 # Anti-Pattern 1 - Visual design isn't the whole story.
 
 ## Example 1 - _the team is using Pivotal Tracker as a to-do list_
