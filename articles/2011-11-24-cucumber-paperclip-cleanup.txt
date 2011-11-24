@@ -1,0 +1,24 @@
+title: Cleaning Up After Paperclip Cucumber Tests
+author: Matt Van Horn
+date: 2011/11/24
+slug: cucumber-paperclip-cleanup
+
+I love using cucumber for acceptance testing, but recently on a personal project
+I noticed that I was accumulating files in my public/system directory every time
+a paperclip step was executed. A little googling got me to 
+[a solution](http://blog.ardes.com/2009/8/4/that-cuking-paperclip), which I've 
+adapted below for Rails 3.1
+
+In features/support/env.rb:
+    require 'paperclip'
+    
+    module Paperclip::Interpolations 
+      alias_method :orig_attachment, :attachment 
+      def attachment(att, style) 
+        "cucumber/" + orig_attachment(att, style) 
+      end 
+    end
+    
+    After do 
+      `rm -rf #{"#{Rails.root}/public/system/cucumber"}`  #remove paperclip files
+    end
