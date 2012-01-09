@@ -100,9 +100,12 @@ also to rename them (to include the '.css') for the assets pipeline.
 
 Also, we need to update the app/config/application.rb to include:
 
-    config.assets.precompile << /(^[^_]|\/[^_])[^\/]*/
+    config.assets.precompile << /^((.*?)\/)?(?!_)[^\/]*$/
 
-I put these under the line
+(The idea is that this regex prevents the pre-compilation of partials, because if that is attempted, it
+will fail with errors like "Undefined mixin 'blueprint-form'")
+
+I usually put the above line with the regex after the line:
 
     config.assets.enabled = true
 
@@ -154,5 +157,20 @@ Now we can deploy to Heroku again
 
 and everything should still be peachy.
 
+## Step 6 ##
 
+Installing blueprint.
 
+If you're following along with the commits on github, at this point, I've added my basic app functions, and 
+I just want to style my static pages using blueprint. (The procedure will be similar for other frameworks)
+
+First in my app directory:
+
+    $ compass install blueprint
+    
+And once again we have to move the files that get created into our assets folder and rename them to 'some-name.css.sass'
+
+After that, we can just deploy again, and everything is still working.
+
+    $ git push heroku master
+    
