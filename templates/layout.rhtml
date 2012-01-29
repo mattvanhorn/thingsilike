@@ -20,12 +20,21 @@
     </script>
   </head>
   <body>
-    <section>
-      <%= yield %>
-    </section>
-    <footer>
-      powered by <a href="http://cloudhead.io/toto">toto</a>
-    </footer>
+    <div id="main">
+      <div id="content">
+        <header>
+          <h1><a href="/">Matt Van Horn</a></h1>
+          <h2><a href="/">Things I Like</a></h2>
+          <h3><a href="/">(and some that I don't)</a></h3>
+        </header>
+        <section>
+          <%= yield %>
+        </section>
+      </div>
+      <footer>
+        powered by <a href="http://cloudhead.io/toto">toto</a>
+      </footer>
+    </div>
   </body>
 </html>
 

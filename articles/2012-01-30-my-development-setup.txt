@@ -1,0 +1,42 @@
+title: My Development Setup
+author: Matt Van Horn
+date: 2012/01/30
+
+I was working on the CSS for this blog, and reading an older post, when I realized how much my daily development setup has changed. Almost everything has changed from a couple of years ago, and I thought it might be nice to share how I get things done, since IMHO it is a pretty nice way to work.
+
+## Hardware
+
+This has changed the least. I'm still tooling away on my 2008 MacBook Pro, although I did drop in a 500GB drive. I will say this about Apple products - they stay useful far longer than their counterparts from Acer and Dell.
+
+## Editor
+
+Still using Textmate, although I am now starting to explore alternatives. Rubymine (which I use at work) is a total pain to work with, so right now I'm leaning towards biting the bullet and learning Vim, unless another decent editor pops up.
+
+## VCS
+
+Github. Is there really anything that needs to be said about that?
+
+## Ruby & Rails
+
+I'm currently using Ruby 1.9.2-p290, with RVM. My most recent project is Rails 3.1.2, but I will probably upgrade to 3.2 within the month.
+
+## Development App Server
+
+I'm using Pow, from 37 signals, which although it has some drawbacks with regard to SSL, is still pretty nice to use locally. I got sick of tweaking Apache and Passenger config files all the time.
+
+## Testing Tools
+
+Cucumber, RSpec 2.8 & Capybara for the basics.
+Fabrication as a factory for test data
+NullDb to ensure that my unit tests are actually unit tests.
+Shoulda Matchers, Email Spec, and Timecop for some miscellaneous conveniences.
+
+## Extras
+
+I use Guard, with guard-spork, guard-rspec, guard-cucumber, guard-bundler, and  guard-pow. This keeps my tests running quickly and continuously.
+
+I'm also using TDDium to offload my CI work.  There's a post-receive hook set at Github, and they push to Heroku for me when the build is green. Pain-free continuous deployment, yay!
+
+I'm also using Pivotal Tracker and pickler to coordinate my development priorities. With the Pivotal iPhone app, I can write stories on the train, and then pickler-pull them into my test suite to do BDD.
+
+That's about it - some nice tools to keep me focused on writing code instead of struggling to configure a bunch of stuff on my machine. After all, who likes shaving yaks?
