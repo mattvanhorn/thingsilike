@@ -1,0 +1,71 @@
+title: Using Webmock with Cucumber for Robust Integration Tests
+author: Matt Van Horn
+date: 2012/02/09
+slug: cucumber-webmock
+
+I decided that it would be a good idea to make my integration tests reflect as
+much of the real-world setup of my app as possible. This includes hitting 3rd
+party APIs over the internet.
+~
+While this can be slow, it is nice to check
+assertions against actual responses, in case an API change breaks something.
+
+The drawback to this was that I could no longer rely on all my cucumber
+features passing while I was coding on the train, or in a park, for example.
+
+Mocking the responses would work, but I didn't want to have 2 sets of
+scenarios, just for offline and online testing. I also wanted to run the same
+assertions regardless of where I was.
+
+So I came up with the following pattern, which tries to use a real connection,
+and falls back to a stub when a connection can't be made.
+
+First, I use curl to record an actual response for Webmock to send.
+The -i option is necessary to include the headers.
+(The API I was using in this example accepts posts of json, and returns json responses.)
+
+    curl -iX POST -d @request.json http://www.api.example.com/do_something > do_something_response.json
+
+Next, I set up my API stubs, in support/fake_api.rb. Note the instance variable in the After block - that a key part that we will return to.
+
+    module FakeApi
+      def stub_api
+        canned_response  = File.read(File.join(Rails.root, 'features', 'support', 'fixtures', 'api', 'do_something_response.json'))
+
+        stub_request(:post, "http://www.api.example.com/do_something").to_return( canned_response )
+      end
+    end
+
+    World(FakeApi)
+
+    After do
+      @api_stubbed = false
+    end
+
+Lastly, I write my cucumber step that deals with the API
+
+    When /^I do something at an external API endpoint$/ do
+      api = MyApi.new
+      begin
+        result = api.do_something
+        result.should be_something
+
+      rescue SocketError => e
+        unless @api_stubbed
+          stub_api
+          @api_stubbed = true
+          retry
+        end
+        fail "Can't connect to API (real OR fake)"
+      end
+    end
+
+So what we do here is try the real API, and if we cannot connect, we retry the
+begin-rescue block using the stubbed version. We use the instance variable as
+a flag to prevent an infinite loop, and we use the After block to ensure that
+the next scenario starts with a real attempt again.
+
+You might want to adjust this, perhaps omitting the After block cleanup to assume that
+if the network isn't there for one test, it won't be there for the duration of the run.
+
+You could also move the flag setting into the method that does the stubbing.
