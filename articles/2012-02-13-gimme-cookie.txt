@@ -1,0 +1,13 @@
+title: Gimme Cookie!
+author: Matt Van Horn
+date: 2012/02/13
+slug: gimme-cookie
+
+I'm using signed permanent cookies to track users in my app, and sometimes it's
+nice to be able to be able to set them in the browser manually. I'm using "Edit This Cookie"
+in Chrome to handle this, but it was a bit tricky to figure out how to get the
+encrypted value of the cookie to manually set it. Well, for future reference, I'll put it here.
+
+    cookie_jar = ActionDispatch::Cookies::CookieJar.new(Rails.configuration.secret_token)
+    cookie_jar.permanent.signed[:foo] = 'bar'
+    cookie_jar[:foo] # => "BAhpBg==--8e5eb732858427af92a0c1eeb4f81b276a775fb8"
