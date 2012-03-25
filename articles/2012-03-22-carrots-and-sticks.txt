@@ -1,0 +1,106 @@
+title: Carrots and Sticks
+author: Matt Van Horn
+date: 2012/03/22
+slug: carrots-and-sticks
+
+## *"I'm not sure if management wants to use these numbers as a carrot or a stick"*
+
+When our engineering director said that to me, in my head I heard the [red
+alert sound](http://www.angelfire.com/nj2/startrek3/images/soundtosredalert.wav)
+from the original Star Trek. ~
+It was my WTF detector going off, again.
+
+The numbers we were discussing were potential metrics for measuring the
+engineering teams performance. That's right, once again a small management
+team came up with the brilliant idea of [trying](http://alistair.cockburn.us/Programmer+productivity+discussion+on+the+APM+list+Oct+2008) to [measure](http://www.joelonsoftware.com/news/20020715.html) programmer
+[productivity](http://c2.com/cgi/wiki?LinesOfCode). Surely, this little startup team could do what no one in the
+past 50 years had been able to manage. And once they had their measurements,
+they were going to be able to [motivate their team](http://www.youtube.com/watch?v=KUqo5tPZjrM&feature=related).
+
+Because that is what
+[carrots](http://www.joelonsoftware.com/articles/fog0000000070.html) and [sticks](http://en.wikipedia.org/wiki/Theory_X_and_theory_Y#Theory_X) are for, right?
+
+For motivating <del>donkeys</del> programmers.
+
+The numbers they plan to use are irrelevant. For the record, it looks like
+we're leaning towards Ron Jeffries '[running, tested features](http://xprogramming.com/xpmag/jatRtsMetric).' This is just as
+likely to be [gamed](http://dilbert.com/strips/comic/1995-11-13/) as any other KPI, and was originally intended as a window
+providing transparency, not a carrot or a stick.
+
+The real problem is the idea that you are going to be able to move that number
+through some kind of reward/punishment program. Software developers just don't
+work like that. Study after study has shown that programmers are intrinsically
+motivated to a very high degree. This means they like working, for rewards
+that are linked to the work itself.
+
+Another thing about programmers is that they are creative. In Daniel Pink's
+book "[Drive](http://www.danpink.com/drive)" he talks about how external rewards actually lead to poorer
+performance on creative tasks. [Alfie Kohn](http://www.alfiekohn.org/managing/fbrftb.htm) wrote that "at least two dozen
+studies over the last three decades have conclusively shown that people who
+expect to receive a reward for completing a task or for doing that task
+successfully simply do not perform as well as those who expect no reward at
+all."[1]
+
+So if this kind of approach to motivating a development team is all wrong -
+what is the right way to motivate them?
+
+Like any good developer, I'm going to start by unpacking the requirement a
+little. Why would management want to motivate the development team? The simple
+answer is that they want to get more done. This assumes on the face of it that
+the team is not delivering at 100% capacity. A second less obvious assumption
+is that whatever the delta between capacity and output, it is related to the
+developer deciding not to work hard, and not the management style, working
+conditions, or any other factor.
+
+The minute an intelligent team member sees you discussing carrots and sticks,
+the clear message they'l take away is that you think "the team is an
+underperforming bunch of slackers." This is not likely to motivate them to
+deliver incredible work.
+
+I think the biggest impediment to programmer motivation is the lack of an
+interesting problem. Paul Graham, in [an essay on great hackers](http://www.paulgraham.com/gh.html), talked about nasty little problems being ones
+where you don't learn anything. When your day is filled with problems like
+that, it is like the life force is being sucked out of you. A common problem
+with managing developers is presenting them with a solution to implement,
+rather than a problem to solve.
+
+The difference between interesting and nasty problems is often one of framing.
+Suppose you're looking to boost gross revenue to look good to investors.
+
+If you have a decent team, and you tell them "We need to increase top line
+revenue" then you are likely to get back a lot of questions on how you are
+measuring revenue, a bunch of suggestions on how to improve it, ways to
+identify your big-spending customers, reports on your best selling products,
+and potential tests for verifying whatever implementations are decided upon.
+
+If you tell them "give out some incentive credit to all our members, and get
+it done by Wednesday" you've reduced it from a potentially interesting
+problem, to several nasty little problems, involving your legacy accounting
+and purchase systems.
+
+Once your team has an interesting problem, the next factor affecting
+productivity is giving them the autonomy to solve it. Good teams need autonomy
+over what they do, when and where they do it, who they do it with and how they
+do it. Presume that your team wants to succeed, and that they want to get as
+much done as soon as possible. Then get out of their way and let them do it.
+
+Of course, life is not perfect, and there will always be things that limit how
+much much freedom the team has. I think of this as friction in the system.
+When you have parts that rub together, you need to compensate by adding
+lubrication. For developer teams this can take several forms. My favorite is
+learning opportunities. Have a budget for conferences, big and small, near and
+far. When a team member is getting down because of the friction, send them to
+a conference that they want to go to. Great programmers get recharged by
+learning. Other kinds of recognition are nice too - take a developer to
+dinner, and talk to him or her. You'll likely get some insights into what
+makes them tick, and the recognition of effort will not be missed by them.
+Personal recognition of effort is worth much more than money to a good
+developer.
+
+In short, treat your developers as the creative human beings that they are,
+and not as beasts of burden that can be motivated by carrots and sticks.
+
+Because if they really were mules, they might wind up kicking you in the head.
+
+
+[1] Harvard Business Review Sept/Oct, 1993
