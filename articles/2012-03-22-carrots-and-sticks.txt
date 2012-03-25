@@ -95,7 +95,7 @@ learning. Other kinds of recognition are nice too - take a developer to
 dinner, and talk to him or her. You'll likely get some insights into what
 makes them tick, and the recognition of effort will not be missed by them.
 Personal recognition of effort is worth much more than money to a good
-developer.
+developer (once a certain baseline compensation is met - we don't just work for praise).
 
 In short, treat your developers as the creative human beings that they are,
 and not as beasts of burden that can be motivated by carrots and sticks.
