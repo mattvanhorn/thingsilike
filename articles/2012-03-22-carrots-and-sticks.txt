@@ -28,7 +28,7 @@ likely to be [gamed](http://dilbert.com/strips/comic/1995-11-13/) as any other K
 providing transparency, not a carrot or a stick.
 
 The real problem is the idea that you are going to be able to move that number
-through some kind of reward/punishment program. Software developers just don't
+through some kind of [reward/punishment program](http://jamesshore.com/Blog/The-Stunning-Truth.html). Software developers just don't
 work like that. Study after study has shown that programmers are intrinsically
 motivated to a very high degree. This means they like working, for rewards
 that are linked to the work itself.
