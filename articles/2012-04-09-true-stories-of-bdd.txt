@@ -1,0 +1,10 @@
+title: True Stories of BDD
+author: Matt Van Horn
+date: 2012/04/09
+slug: true-stories-of-bdd
+
+I've built up a healthy amount of cynicism working on the web for the last decade and a half, and it's time to let some of it out. I just launched a little side project called "[True Stories of BDD](http://truestoriesofbdd.com)."
+
+It's a place to collect and share the real story behind the "feature" you were asked to build.
+
+I'm not sure how many people feel the same way I do, but I see a lot of stupid, evil shit happening on the web every single day. But I'm sure I don't see all of it - so go over to [http://truestoriesofbdd.com](http://truestoriesofbdd.com) and share the ones I don't know about yet.
