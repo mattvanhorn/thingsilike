@@ -1,0 +1,42 @@
+title: Testing as Idiot-Proofing
+author: Matt Van Horn
+date: 2012/04/12
+slug: testing-as-idiot-proofing
+
+I was pairing on some code the other day with a coworker. It was a fairly simple thing, deep cloning an active record object and making sure the object's collections were also cloned.
+
+There was, along the way, a conversation that went something like:
+
+> My pair: _"We should write a spec that will break if any new collections are added that don't get cloned"_
+
+> Me: "Why?"
+
+> _"Because, sometimes the admin tool breaks if we forget to clone a new collection. It's happened before a few times."_
+
+> "Shouldn't that be part of the specs that are written before adding a new collection?"
+
+> _"Well, sometimes we forget to do that"_
+
+So... we need to write a spec __now__, to handle adding functionality __later__, because we know that there's a high probability that _**we won't spec the behavior before we add it**_.
+
+How many general precepts of agile development does this violate?
+
+Well, first off it is violating [YAGNI](http://c2.com/cgi/wiki?YouArentGonnaNeedIt). We might never actually add another collection.
+
+It's also aiding and abetting a violation of [TDD](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd), which is that you would specify the future behavior before adding it.
+
+It is also introducing a spec which doesn't actually specify how the object behaves - it is specifying that certain implementation details don't change.
+
+And lastly, it is violating the idea that [there should only be one reason for a test to fail](http://blog.stevensanderson.com/2009/08/24/writing-great-unit-tests-best-and-worst-practises/). In this case the test could fail because we added a collection that needed to be cloned and wasn't, or because we added a collection that didn't need to be cloned, in which case our spec is now wrong. Since we don't know the nature of our future hypothetical collection, it is probably wrong to specify it's behavior now.
+
+So given the situation as described, what is the right thing to test?
+
+We're not going to specify that all collections should be cloned, since it is already known that not all collections need to be treated the same way.
+
+My preferred solution is to say we will write the specs for the new collection when we add it - but that does not address my pair's concern that the team doesn't always test drive new code.
+
+My second favorite solution is that there should be an integration test on the admin tool that would catch any breakage.
+
+However, I'm genuinely curious about this issue and how other people are dealing with it. Do you use your tests to prop up coding practices that are undisciplined? Or do you accept that the more you try to idiot-proof, the stronger the idiocy you encounter?
+
+
