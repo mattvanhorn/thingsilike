@@ -1,0 +1,19 @@
+title: Today's Collected Wisdom
+author: Matt Van Horn
+date: 2012/04/16
+slug: collected-wisdom
+
+[Confident Code](http://avdi.org/talks/confident-code-railsconf-2011/)
+
+[Estimates and the desire to be lied to](http://judykat.com/ken-judy/estimates-and-desire-to-be-lied-to/)
+
+[How Not To Run An A/B Test](http://www.evanmiller.org/how-not-to-run-an-ab-test.html)
+
+[Bored People Quit](http://www.randsinrepose.com/archives/2011/07/12/bored_people_quit.html)
+
+[Command Line Fu](http://www.commandlinefu.com/commands/browse/sort-by-votes)
+
+
+
+and a classic American cocktail to wash it down with:
+[Old Fashioned 101](http://oldfashioned101.com/)
