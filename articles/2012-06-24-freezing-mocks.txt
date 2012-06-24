@@ -1,0 +1,80 @@
+title: Freezing Mock Objects in RSpec - Don't do it.
+author: Matt Van Horn
+date: 2012/06/24
+slug: freezing-mocks
+
+I ran into an interesting error when writing a test this morning, and I'm blogging it because google came up with nothing related. 
+
+I'm using Rails' [composed_of](http://api.rubyonrails.org/classes/ActiveRecord/Aggregations/ClassMethods.html) to aggregate some model fields into their own class. Pretty standard.
+
+    class Location < ActiveRecord::Base
+
+      composed_of :address, :class_name => "Address",
+                            :mapping => [ %w(street street),
+                                          %w(unit unit),
+                                          %w(city city),
+                                          %w(us_state us_state),
+                                          %w(postal_code postal_code) ]
+
+    end
+
+And I have a test that look like this:
+
+    require 'spec_helper'
+    describe Location do
+      let(:address){ double(:street      => '350 5th Avenue',
+                            :unit        => '600th Floor',
+                            :city        => 'New York',
+                            :us_state    => 'NY',
+                            :postal_code => '10001') }
+
+      let(:location){ Location.new(:address => address) }
+
+      it "has an address" do
+        location.address = address
+        location.street.should == address.street
+      end
+    end
+
+Also pretty standard, except that this fails with "can't modify frozen Class"
+Now, I know that objects are frozen when they are assigned to a composed_of attribute, but since I'm not attempting to modify the address in any way, I was confused about the failure.
+
+It is actually RSpec that is [trying to modify the frozen object](https://github.com/rspec/rspec-mocks/blob/master/lib/rspec/mocks/method_double.rb#L105), as part of the test teardown.
+
+Now that I know that, there are 2 possible solutions - my first thought:
+
+    require 'spec_helper'
+    describe Location do
+      let(:address){ double(:street      => '350 5th Avenue',
+                            :unit        => '600th Floor',
+                            :city        => 'New York',
+                            :us_state    => 'NY',
+                            :postal_code => '10001') }
+
+      let(:location){ Location.new(:address => address) }
+
+      it "has an address" do
+        address.stub(:freeze).and_return(address)
+        location.address = address
+        location.street.should == address.street
+      end
+    end
+
+And what I think is a better approach:
+
+    require 'spec_helper'
+    require 'ostruct'
+    describe Location do
+      let(:address){ OpenStruct.new(:street      => '350 5th Avenue',
+                                    :unit        => '600th Floor',
+                                    :city        => 'New York',
+                                    :us_state    => 'NY',
+                                    :postal_code => '10001') }
+
+      let(:location){ Location.new(:address => address) }
+
+      it "has an address" do
+        location.address = address
+        location.street.should == address.street
+      end
+    end
