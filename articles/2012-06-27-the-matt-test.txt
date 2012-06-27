@@ -1,0 +1,88 @@
+title: The Matt Test
+author: Matt Van Horn
+date: 2012/06/27
+
+It's been almost 12 years since Joel Spolsky came up with the Joel Test, and although it has been helpful in the past, I think it is time for an upgrade.
+A lot of things from his test I think are givens today, like source control. These days saying you don't use source control is like saying you don't use electricity.
+
+So without further delay, I present The Matt Test for web application teams. Like the Joel Test, it is all yes-or-no, and you really ought to be concerned if you score less than 10 or 11.
+
+1. Can engineers choose their own toolset?
+2. Can you build a development environment in one step?
+3. Do you use a story-branch version control workflow?
+4. Can you deploy to production whenever the build is green?
+5. Can you un-deploy a feature in one step?
+6. Do you have a staging environment that reflects exactly what is going into production?
+7. Are you eating your own dog food?
+8.
+  * Do your unit tests run in less time than getting a soft drink from the kitchen?
+  * Do your integration tests run in less time than getting a coffee from the nearest Starbucks?
+9. Is static analysis part of your build?
+10. Do the product managers and designers work side-by-side with the engineers?
+11. Can engineers decide for themselves what to work on?
+12. Is there a technical founder?
+
+
+### Can engineers choose their own toolset?
+
+Fundamentally, software development is a craft, not a science, and not an engineering discipline. Good craftsmen have an extremely close relationship with their tools. You wouldn't hand Michelangelo a jackhammer and tell him that it cuts marble better than a chisel, so why force your team to use Rubymine, or Eclipse or Emacs, when you can let them use the tool they are most comfortable and productive using. The choice of tools can also tell you a lot about the person during the interview process. For example, I probably wouldn't be hiring anyone who wanted to use a non-POSIX compliant OS to develop Rails applications for deployment to Linux based hosting.
+
+### Can you build a development environment in one step?
+
+The first interaction with a new team member is getting them up and producing code for the application. If this is a haphazard, error-prone exercise in frustration, it sets the tone for the entire engagement.
+
+It also says something about the quality of your code if you cannot support heterogeneous toolsets and still automate the process of checking out the code, building the dependencies and getting it all running. A new team member should have his computer set up, with all the tests run and a dev server operating before lunch on his first day.
+
+### Do you use a story-branch version control workflow?
+
+A messy master branch is the bane of my existence. Master, or whatever branch you are deploying to production, should be reserved for commits that are well tested and ready to deploy. This means that everyone else should be working on their stories in separate branches until the work is done and ready for production. These story branches should be pulling changes from master often, to minimize merge conflicts at the end. [Rein Henrichs has a good workflow](http://reinh.com/blog/2009/03/02/a-git-workflow-for-agile-teams.html), and so do [Josh Susser](http://blog.hasmanythrough.com/2008/12/18/agile-git-and-the-story-branch-pattern/) and [Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model/)
+
+### Can you deploy to production whenever the build is green?
+
+If you're still scheduling deploys at night, you're doing it wrong.
+[Brian Crescimanno said it best](http://briancrescimanno.com/2011/09/29/why-are-you-still-deploying-overnight/) when he wrote that if your process is so bad that you presume there will be problems, then "You have no confidence in your code quality; or (or maybe, and), you have no confidence in your infrastructure and deployment process.  If you lack confidence that your new system is ready for production, _you probably shouldn’t be pushing it to production!_" and  "deploying overnight is likely indicative of something (probably several somethings) being broken in your process."
+When I'm evaluating a tech team, I ask if they can do a deploy then and there. It's a major strike against them if they mumble something about active sessions, or migrations or schedule and approvals. For a great example of doing it right, have a [look at Etsy](http://codeascraft.etsy.com/2011/04/20/divide-and-concur/).
+
+### Can you un-deploy a feature in one step?
+
+Even with the best practices, there are (hopefully rare) occasions when you want to undo a deploy, or at a minimum, hide a deployed feature. I've been using the rollout gem for dark or incremental feature release, and Heroku's built in rollback ability for whole deploys. This gives me the confidence to deploy at will, knowing even a big mistake is easily fixable.
+
+### Do you have a staging environment that reflects exactly what is going into production?
+
+Part of the job is communicating progress to other members of the business. An automated staging environment makes this much easier. If someone wants to know what features are going out in the next release they can look at staging. If they want to see how you handled a UI issue, they can look at staging. If they want to try out a user experience flow, they can do it on staging.
+An identical staging environment also helps detect deployment issues. There should be no difference from production, except for the configuration of the environment. Nobody likes to see production and find that it is different than what they saw on staging.
+
+### Are you eating your own dog food?
+
+Say one of your customer service reps comes to you with an issue regarding a customer order. If you have to run SQL on the production database to solve it, you are not eating your own dog food. If you need a shell on the app server, you are not eating your own dog food.
+
+If you absolutely can't solve an issue through the user-facing tools that you built, and you don't **immediately** add 'building such tools' to the backlog, you fail this question. Automating those kinds of tasks, and providing a way for users to scratch their own itches frees up a lot of time for building other valuable stuff.
+
+
+### Do your unit tests run in less time than getting a soft drink from the kitchen?
+
+If you are not running all of your unit tests before every commit, then you are committing broken code, breaking the build, and ruining your deployment. I just ran 150 unit tests while you read the last 2 sentences. Michael Feathers said that if it doesn't run in under a tenth of a second, it is not a unit test. I think he is a really patient guy.
+
+Seriously, if the tests are slow they wont get run. If they don't get run, you'll wind up with more bugs. If you can't get them to run fast you probably have code quality issues. Crappy code with more bugs is not what I want my team to be known for.
+
+### Do your integration tests run in less time than getting a coffee from the nearest Starbucks?
+
+Your not running these on every commit, but you should be running them before every deploy. And you don't want to limit your deploys to once a day, so make them fast, run them in parallel, and get it done while you take a break and do some thinking about the next thing you're building.
+
+### Is static analysis part of your build?
+
+Even with a dynamic language like Ruby there are static analysis tools that can help identify problems in code quality before they become big enough to cause real pain. [Flog](http://ruby.sadi.st/Flog.html), [Flay](http://ruby.sadi.st/Flay.html), [Reek](https://github.com/troessner/reek/wiki), [Roodi](http://blog.martyandrews.net/2008/09/roodi-checkstyle-for-ruby.html) and [Rails Best Practices](https://github.com/railsbp/rails_best_practices) are some of the ones that I use. A programmer that uses these tools is like a chef that tastes the soup, or a carpenter that checks the levelness of a floorboard he's just put down. It shows an awareness that sometimes, some area of the code might need a little more attention or refactoring.
+
+### Do the product managers and designers work side-by-side with the engineers?
+
+On an agile team, it is imperative to have the people planning features and designing interfaces working alongside the developers building those things. This doesn't always mean physically, as I've had great experiences using Campfire and the like to operate remotely. It does mean that the design and planning process is as transparent and iterative as the software development process. Things don't get hurled 'over the wall' to the tech team, instead everyone has input at every step of the process. This prevents any team member from going too far off course with a design, or an implementation.
+
+### Can engineers decide for themselves what to work on?
+
+This is going to be a tough one for most companies to pass. I know of only [a few places where this happens](http://online.wsj.com/article/SB10001424052702303379204577474953586383604.html) - Google, [Github](http://zachholman.com/posts/how-github-works-creativity/), and [Valve](http://www.valvesoftware.com/company/Valve_Handbook_LowRes.pdf)(pdf) are doing it in the software field, and W.L. Gore is doing it in garment manufacturing. By letting the team members decide what the priorities are, you get a serious reality check on the quality of ideas. How good can an idea be, if you can't convince anyone to work on it? At the same time this approach fosters an ownership culture, where people feel a serious connection to the business. You can't blame management for poor decisions when there is no management when it comes to making those decisions. Instead, management sets out a vision, and the team works to implement it in the best possible way. If there is a disconnect between the vision of management and the vision of the team, it is better to know it up front, because that disconnect will cause issues that no amount of process will be able to overcome.
+
+### Is there a technical founder?
+
+This one is from experience. Craftsmanship and good practices emerge from the bottom up, but there needs to be a conducive environment in order for them to take hold. In my experience technical founders understand this on a much deeper level than founders with a sales or finance background. If there is no technical founder, the team will have to expend countless cycles explaining things like technical debt, refactoring, the difference between saying agile and being agile, and many other things that should just be understood implicitly. This leads to frustration and eventual burnout, unless the non-technical founders is one of the rare types that wants to learn this stuff, and has the ability to listen and learn from his team.
+
+
