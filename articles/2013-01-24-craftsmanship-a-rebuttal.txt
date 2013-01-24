@@ -1,0 +1,39 @@
+title: Craftsmanship, a rebuttal
+author: Matt Van Horn
+date: 2013/01/24
+
+[Ted Neward](https://twitter.com/tedneward) is [blogging](http://blogs.tedneward.com/2013/01/24/On+The+Dark+Side+Of+Craftsmanship.aspx) that the software craftsmanship movement is divisive and elitist. He's wrong, and he seems to be completely misunderstanding the nature of craftstmanship in general.
+
+Since the post sets up several straw men, I'm going to address them one at a time. First, there is an allusion to software craftsmen as being an exclusive group who agre on the "right" tools and techniques. This could not be further from the truth. Anyone who is serious about their craft knows that for every job there are some tools that are better and some that are worse. You wouldn't try to cut down a redwood with a pen knife, and you are probably not going to use a chainsaw to carve a spoon. Craftsmanship lies in knowing the characteristics of the various tools, choosing the right one, and wielding it with skill. I suspect there are more than a few people crafting elegant solutions in VB, and I know for a fact there are people cutting and pasting together ugly messes from bits and pieces of ruby found on Stack Overflow.
+
+In another section, he compares software craftsmen to fine artists, when all you need is a house painter. This is also very misleading. The proper comparison would be between the house painter who shows up with dropcloths, ladders, and a paint sprayer, and the guy who "paints" your house by opening cans of paint and splashing them over the walls. Craftsmanship is about doing a job well, not about making an artistic statement. The jobs are often simple and more comparable to painting a house than painting a masterpiece.
+
+Then there's an assertion I really don't understand. I'll quote it here:
+*That if we take the name away from the code, and just look at the code, we can't really tell what's "elegant" code, what's "hack" code, and what was "elegant hack because there were all these other surrounding constraints outside the code"*
+
+Now, I may not have a good definition of elegant code, but I definitely know it when I see it - regardless of who wrote it.
+If you can't see that
+
+    (1..10).each{|i| puts i}
+
+is more elegant than
+
+    x = 0
+    while true do
+      x = x + 1
+      if x > 10
+        break
+      end
+      puts x
+    end
+
+then you must near the beginning of your journey towards mastery. Practicing your craft develops your ability to recognize these differences, just as a skilled tailor can more easily spot the difference between a bespoke suit and something from Men's Wearhouse.
+
+Finally, he closes with a [famous zen story](http://storynory.com/2011/03/27/the-samurai-and-the-tea-master/), but he entirely misses the point of it. The story concerns a tea master, and a samurai, who get into a duel. The tea master prevails by bringing the same concentration to the duel that he brings to his tea ceremony. The point that Ted seems to miss here is that the tea master is a craftsman of the highest order. A master of cha-do (the way of tea) is able to transform the simple act of making and pouring a cup of tea into something transcendant by bringing to this simple act a clear mind, a good attitude, and years of patient, humble practice. Arguably he prevails because he has perfected his craft to a higher degree than the samurai has perfected his own. That is why he has earned the right to wear the garb of a samurai, and why he is able to face down his opponent.
+
+In the end it comes down to this - "craftsman" is not a label to be used for segregation. It is an attitude and a habit you bring to your daily work.
+
+It is not saying "look at this beautiful thing I made," it is saying "I do not want to be ashamed of what the things I make say about me."
+
+It is not saying "I am better than you" -  it is saying "I could be so much better than I am, if I am mindful and diligent in my practice."
+
