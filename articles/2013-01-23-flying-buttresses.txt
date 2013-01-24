@@ -2,21 +2,24 @@ title: Flying Buttresses
 author: Matt Van Horn
 date: 2013/01/23
 
-"I think QA is the flying buttress of dysfunctional [software development] practices"
--- Elizabeth Hendrickson
+**"...I think QA is the flying buttress of dysfunctional [software development] practices"**
+
+*-- Elizabeth Hendrickson ([@testobsessed](https://twitter.com/testobsessed/status/293393356963340288))*
 
 For me this was such a perfect observation, I had to blog about it.
 
-If you don't have an obsessive interest in architecture, a flying buttress is a structure whose sole purpose is to hold up an otherwise unstable building wall. It does this by transmitting the lateral forces over an intervening space to the ground. 
+If you don't have an obsessive interest in architecture, a flying buttress is a structure whose sole purpose is to hold up an otherwise unstable building wall. It does this by transmitting the lateral forces over an intervening space to the ground.
 
-The more I think about it, the more insightful this observation seems. As opposed to other types of buttresses, a flying buttress has a minimal point of contact with the wall it is helping to support. QA generally has a minimal point of contact with the rest of the development team, most often in the form of a hand-off at the end of a development phase. Flying buttresses are often seen as beautiful, and QA teams are often seen as necessary. However, the truth is that the beautiful cathedral took thousands of laborers literally centuries to build and the method of constructing these buttresses illustrates why. 
+![Cologne Cathedral](http://www.sacred-destinations.com/germany/cologne-cathedral-photos/slides/IMG_6469.JPG "Cologne Cathedral")
 
-To build a flying buttress, you first have to build a wooden frame called a centering. These were temporary structures that would support the stone buttress until the mortar dried. They had to be built on the ground and hoisted into place, to support the wall as it was being built. After the stonework was finished, they had to be dismantled, and disposed of. All in all it was a very labor intensive and inefficient process, especially compared to something like a modern steel and reinforced concrete structure. The Cologne Cathedral in Germany, with it's beautiful flying buttresses took 640 years to build and cost well over a billion dollars in today's money. By contrast, the Cathedral of Christ the Light in Oakland, CA cost $175 million, and was completed in 5 years.
+The more I think about it, the more insightful this observation seems. As opposed to other types of buttresses, a flying buttress has a minimal point of contact with the wall it is helping to support. QA generally has a minimal point of contact with the rest of the development team, most often in the form of a hand-off at the end of a development phase. Flying buttresses are often seen as beautiful, and QA teams are often seen as necessary. However, the truth is that the beautiful cathedral took thousands of laborers literally centuries to build and the method of constructing these buttresses illustrates why.
+
+To build a flying buttress, you first have to build a wooden frame called a centering. These were temporary structures that would support the stone buttress until the mortar dried. They had to be built on the ground and hoisted into place, to support the wall as it was being built. After the stonework was finished, they had to be dismantled, and disposed of. All in all it was a very labor intensive and inefficient process, especially compared to something like a modern steel and reinforced concrete structure. The [Cologne Cathedral](http://www.koelner-dom.de/index.php?id=home&L=1) in Germany, with it's beautiful flying buttresses took 640 years(!) to build and cost well over a billion dollars in today's money. By contrast, the [Cathedral of Christ the Light](http://www.ctlcathedral.org/) in Oakland, CA cost $175 million, and was completed in 5 years.
 
 The same way that modern construction techniques and materials have made flying buttresses obsolete, agile practices and testing should be making QA departments obsolete. In modern construction, the structures that support the static loads of the building are integral parts of the building itself, and they help to create a useful space. In modern software development, QA should be an integral part of the process, inextricable from the rest of the development process. The practices of TDD and BDD should speed up development at the same time that they improve the quality of the finished product.
 
 The most telling aspect of the flying buttress metaphor is the fact that without the support of these buttresses, the building would collapse under it's own weight. Similarly, a development process reliant on QA to catch defects is bound to collapse under the weight of accumulated technical debt, and the cognitive load required to deal with highly coupled, monolithic designs that result from piling code upon code like the granite stones of a gothic cathedral.
 
-But QA is not the only example of a flying buttress in the development process. Tools like Spork and Zeus support otherwise intolerably slow tests. Unnecessary status meetings support a process with too little transparency. Checklists (e.g. for deploys) support cumbersome processes that should have been automated. I'm sure you can find many more examples if you look for them. 
+But QA is not the only example of a flying buttress in the development process. Tools like Spork and Zeus support otherwise intolerably slow tests. Unnecessary status meetings support a process with too little transparency. Checklists (e.g. for deploys) support cumbersome processes that should have been automated. I'm sure you can find many more examples if you look for them.
 
 The question then becomes, how can we remove these supports and get to a stable process without having the whole thing collapse in the transition? I'll cover this in a later blog post.
