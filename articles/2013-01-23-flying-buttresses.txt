@@ -10,7 +10,7 @@ For me this was such a perfect observation, I had to blog about it.
 
 If you don't have an obsessive interest in architecture, a flying buttress is a structure whose sole purpose is to hold up an otherwise unstable building wall. It does this by transmitting the lateral forces over an intervening space to the ground.
 
-![Cologne Cathedral](http://www.sacred-destinations.com/germany/cologne-cathedral-photos/slides/IMG_6469.JPG "Cologne Cathedral")
+![Flying Buttresses](images/flying_buttresses.jpg)
 
 The more I think about it, the more insightful this observation seems. As opposed to other types of buttresses, a flying buttress has a minimal point of contact with the wall it is helping to support. QA generally has a minimal point of contact with the rest of the development team, most often in the form of a hand-off at the end of a development phase. Flying buttresses are often seen as beautiful, and QA teams are often seen as necessary. However, the truth is that the beautiful cathedral took thousands of laborers literally centuries to build and the method of constructing these buttresses illustrates why.
 
