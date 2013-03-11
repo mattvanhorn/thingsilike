@@ -1,0 +1,35 @@
+title: Timid Development
+author: Matt Van Horn
+date: 2013/03/11
+
+A short time back I wrote [a post](http://mattvanhorn.com/2013/01/23/flying-buttresses/) about how QA is essentially an external support for a dysfunctional software development process. Today I'll try to explain one particular family of dysfunctions, and how they impact not only code quality, but team morale, and overall productivity.
+
+This collection of dysfunctional practices makes up what I shall call 'Timid Development,' which alludes to [Avdi Grimm's discussion](http://www.youtube.com/watch?v=T8J0j2xJFgQ) of timid code and confident code. Timid development is characterized by a general environment of fear, uncertainty and doubt. In an organization with a timid development process you will often hear variations of the following:
+
+_"Is it safe for me to merge my feature branch into master? Or should I wait until [some milestone]"_
+
+_"Can I deploy to the staging server? Is someone using it for QA?"_
+
+_"Who knows about the FooBar class? I think I need to change it, but I'm not sure how it works"_
+
+_"You should have QA run through that to make sure it doesn't break anything"_
+
+Everybody is working under the assumption that anything can break at any time. Deploys are dangerous, so they definitely can't be done continuously, they must be scheduled and overseen. If there is a test suite, there is little confidence that it works to catch regressions, and even less that it documents the code. Crises break out on a depressingly regular schedule.
+
+Constant exposure to this environment breeds something like generalized anxiety disorder in all the developers. Eventually, they acclimate to a state of constant anxiety and feel like nothing is wrong. They start to rationalize the fear - telling themselves that they are just being prudent and managing risk. At this point it becomes very difficult to change the process because change itself becomes something to fear.
+
+**So what can be done?**
+
+The same way that people can treat their phobias by short controlled exposures to the things they fear, so we can start introducing small positive changes to the development process, and slowly build up a more confident style of development.
+
+I'd recommend that the first exposure be to small tests and refactoring. Start putting in place small, [fast tests](http://www.confreaks.com/videos/641-gogaruco2011-fast-rails-tests) around some of the smaller messes. Get developers used to running these tests every few minutes as they make changes.  As they realize that this style of working keeps them within a few Cmd-Z's of working code, they will become more confident in their tests and their code. (Katrina Owen gave [a wonderful talk](http://www.youtube.com/watch?v=J4dlF0kcThQ) on the psychological benefits of therapeutic refactoring at Cascadia Ruby.) Faster testing and [frequent refactoring](http://martinfowler.com/bliki/OpportunisticRefactoring.html) comprise a virtuous cycle which should improve the quality of the code overall.
+
+As confidence builds in the test suite, the test suite can be used for true continuous integration. Broken builds should be the exception, not the rule, and when the build is broken it will be customary for everyone to drop what they are doing and work on getting it back to a working state.  Broken builds become signal instead of noise.
+
+Another technique for building confidence is to automate everything that can be automated, using well-tested scripts. Even things that need human eyes on them can often be automated, with output sent after the fact, to a person who can roll back changes if necessary. Multi-step deploy processes are a great candidate for this.
+
+Eventually, confidence in your test suite and CI builds will grow to the point where [anyone can deliver features at any time](http://codeascraft.etsy.com/2010/05/20/quantum-of-deployment/). Feature flags are used to keep the not-ready-for-prime-time stuff out of sight of the users. We know the feature flags work, and we know the code doesn't break anything, because of our tests and CI.
+
+As the pace of delivery picks up, because the process is now confidently moving forward, it becomes impractical to have QA as a separate phase of development. QA should be looking at the code on a continuous basis, and not be a roadblock to delivering value. Whether they look at a staging server or the production application is decided by how risk tolerant you can afford to be. [Whether you need a separate QA team at all may also be an issue you wish to consider](http://www.youtube.com/watch?v=ghZAqphDbEA).
+
+As the process becomes more and more confident, the development team will start to feel more relaxed (since the normal state of things is now 'working') and all the cognitive load that had previously been used to deal with worrying about breaking something, can now be used to deliver new value and improve existing code.
