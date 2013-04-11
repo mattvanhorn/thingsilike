@@ -39,6 +39,15 @@ body {
 header, footer, section, article {
   display: block; }
 
+#pairing {
+  display: inline-block;
+  margin-left: 40px;
+  margin-top: -70px;
+}
+#contact {
+  display: inline-block;
+  margin-left: 40px;
+}
 #by {
   font-style: italic;
   margin-right: 5px;
