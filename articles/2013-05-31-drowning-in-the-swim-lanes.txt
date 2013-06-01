@@ -2,8 +2,6 @@ title: Drowning In The Swim Lanes
 author: Matt Van Horn
 date: 2013/05/31
 
-#Drowning In The Swim Lanes
-
 As organizations grow in size, it is common for departments to feel like they are being short-changed on access to engineering resources. One response to this is to dedicate engineering resources to specific departments, either exclusively or as a primary responsibility. Because the term "silo" has negative business connotations, some companies prefer to use the term "swim-lanes" to describe this setup. The metaphor uses engineering as a swimming pool, with sub-teams segregated by their primary stakeholder. When all the teams are co-located, and there is daily conversation between them, it is easy to be fooled into thinking they are not information silos. But this is wrong for a number of reasons.
 
 ##Swim lanes attenuate the transmission of application expertise.
