@@ -1,0 +1,48 @@
+title: Drowning In The Swim Lanes
+author: Matt Van Horn
+date: 2013/05/31
+
+#Drowning In The Swim Lanes
+
+As organizations grow in size, it is common for departments to feel like they are being short-changed on access to engineering resources. One response to this is to dedicate engineering resources to specific departments, either exclusively or as a primary responsibility. Because the term "silo" has negative business connotations, some companies prefer to use the term "swim-lanes" to describe this setup. The metaphor uses engineering as a swimming pool, with sub-teams segregated by their primary stakeholder. When all the teams are co-located, and there is daily conversation between them, it is easy to be fooled into thinking they are not information silos. But this is wrong for a number of reasons.
+
+##Swim lanes attenuate the transmission of application expertise.
+
+First of all, daily conversation is not the same as information transmission. Swim lanes limit the number of people who have frequent exposure to any given piece of code. They also limit the number of people who will find out about any particular stakeholder's pain points. In short, they become information sinks, not information radiators. 
+
+Less obvious is the cost to engineers both in and out of the lane when it comes time for someone to deal with an unfamiliar piece of code. The new person will be forced to ask a member of the lane for information, breaking the flow of both. These minor interruptions can destroy much larger periods of productivity.
+
+##Swim lanes encourage competition for resources.
+
+For most companies, it is unlikely that all departments will have an equal demand for engineering resources at all times. Sometimes, a period of low demand can convince an organization that the lane needs fewer engineers, or from the lane's point of view, that they are not as valued.
+
+This eventually leads to competition for headcount, and other resources. Everyone needs to exaggerate their needs or find ways to stand out. Time spent working on productive activity is reduced in favor of time spent marketing your team. Instead of working towards the company's larger goals as a larger team, each lane winds up advancing its own local maxima of priorities.
+
+Communication between the lanes and the larger company becomes less focused on "What can I do for you?" and more focused on "What I need from you." The priorities of the lanes will also frequently fall out of sync with the overall priority list, since it is unlikely that a company's top N priorities are evenly distributed across their N departments.
+
+##Swim lanes are an inefficient way of allocating work.
+
+As a means of allocating projects or tasks, the swim-lane system is also horribly inefficient. At any given time some lanes will be busy, and others will be more quiet. Achieving 100% utilization will be difficult, unless the engineering group is understaffed overall.
+
+Trying to keep everyone busy has it's own problems. Horse-trading of developers between teams, comes with a steep on-boarding cost, since the lanes have limited exposure to code outside their own. Veterans find themselves in high demand, since no one can catch up to the amount of "tribal knowledge" that they've accumulated.
+
+##A Better Alternative
+
+Fortunately, there are alternatives to this organization. An agile organization can maintain a single backlog of work from all the various stakeholders and teams can pop the highest priority item off the top of the stack and work on it. Having multiple teams serving a single queue of work is more efficient. This can be verified observationally by going into any Whole Foods Market that has 10 cashiers serving a single queue, and comparing time through the queue to a supermarket with 10 cashiers and 10 lanes.
+
+Ideally, in an agile system, the work items will be broken down small enough that team size can be 2 (otherwise known as pair-programming). These pairs will be cycling through different stakeholders' projects multiple times per week or month, and will quickly build up a bigger picture view of the entire application.
+
+Of course this is easier said than done. There is real work involved in maintaining an efficient system. Someone has to own the prioritization of work across the entire company, not just one lane. If this involves meetings with department representatives, there is likely to be conflict.
+
+But conflict is a sign of a healthy company establishing quality goals. Projects that have been fought for, and defended via logical argument will likely be more fit than projects that have had no such survival pressure. 
+
+There will also be a lot of work involved in distilling the work into units of the right size. A key to maintaining this system (especially in the face of organizational resistance to change) is the ability to deliver and deploy customer value every single day. This means crafting stories that are atomic units of logic, data and UI.
+
+Transitioning from swim-lanes to an agile development environment can also be tricky. I'd suggest starting by creating pairs, or 2 pair quads, made up of members of formerly separate lanes. After they have had a chance to facilitate some information flow between their former lanes, they can rotate pairs with other groups and continue the process. 
+
+I'd also suggest finding out who has good experience with pairing and spreading them among the new pairs and quads, since pairing itself is a skill that needs to be learned. It is likely to be frustrating for some at first, just as learning a new programming language can be frustrating. 
+
+After a few weeks, you'll usually be able to see both the value provided and also have the habit somewhat developed.
+Then open communication, and caring maintenance of the backlog can keep the machine humming along smoothly. You end up with a system that shares the characteristic of a hologram; that every small piece encodes the information of the whole thing.
+
+Best of all, new members can be smoothly integrated into the system, getting up to speed quickly and increasing the rate of value delivery, rather than slowing it down.
