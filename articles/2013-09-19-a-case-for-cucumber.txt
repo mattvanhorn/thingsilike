@@ -1,28 +1,32 @@
+title: A Case for Cucumber
+author: Matt Van Horn
+date: 2013/09/19
 
 
 
+Kevin Liddle wrote an [interesting post](http://blog.8thlight.com/kevin-liddle/2013/09/18/a-case-against-cucumber.html) this morning, making a case against [Cucumber](http://cukes.info). Like many people who hate on Cucumber, I think he misses the point by a little ways. Allow me to mount a defense of Cucumber by slightly editing some of his stories.
 
-
-
-
-Kevin Liddle wrote an interesting post this morning, making a case against Cucumber. Like many people who hate on Cucumber, I think he misses the point by a little ways. Allow me to mount a defense of Cucumber by slightly editing some of his stories.
-
+```gherkin
 Given I am a product owner
 When there are awesome dukes
 Then the entire team has a shared understanding of acceptance
+```
 
 The point is not to provide some translation of code for non-technical managers. The point is to foster a ubiquitous language to use when talking about the application. When you have a ubiquitous language, you no longer have to worry about some discrepancy between how the manager is using the application and what the developers are thinking it should do. You are not saving time coding - you are saving some of the endless back and forth that happens when "done" is not clearly defined. If the non-technical manager is clueful, you are also saving him time clicking through the application's happy paths, and freeing him up to check the edge cases that humans are good at finding.
 
 So what other misconceptions do people have about cucumber?
 
+```gherkin
 Given I am a product owner
 When I know how to write awesome dukes
 Then I am confident that I understand the problem
+```
 
 Another benefit of using Cucumber is to force the stakeholder to actually think about what they mean. All too often, acceptance criteria becomes a sort of  "I know it when I see it" test, that one developer would have a hard time with, never mind a whole team. It's been said that if you can't explain something to a 6-year old then you don't understand it. My take on it is if you can't write out your acceptance criteria, then you don't really have any.
 
 Oh, and let me pause here to inject my suspicion that Mr. Liddle hasn't used Cucumber all that much. He goes into a small digression about how you can't find failed steps easily, which I don't quite understand since my output looks like this:
 
+```gherkin
 Background:                                 # features/my_awesome.feature:6
   Given I create a "Foo" widget             # features/step_definitions/my_awesome_steps.rb:9
   And I visit the widget page               # features/step_definitions/global_steps.rb:5
@@ -32,14 +36,17 @@ Background:                                 # features/my_awesome.feature:6
 Scenario: The UI responds correctly to option selection.             # features/my_awesome.feature:11
   Given I am on the widget page                                      # features/step_definitions/global_steps.rb:1
   When I choose to pay by credit card starting today                 # features/step_definitions/widget_steps.rb:33
+```
 
 See those comments? I can cut and paste them right into my editor and go directly to the matching step.
 
 
-Back to the concern:
+Back to the concerns:
 
+```gherkin
 GIven a set of requirements in the Gherkin syntax
 When I write acceptance tests for my application
 Then why shouldn't I make my requirements executable
+```
 
 Mr. Liddle's biggest misconception is that Cucumber's purpose is just to make code understandable to non-technical stakeholders. He says it's "just a way to wrap RSpec tests with a non-technical syntax." Since I often use cucumber on my own side projects (https://github.com/mattvanhorn/BJJLife/tree/master/features) - where I already can understand the code perfectly - what benefit could I be getting? I get the benefit of working from well thought out examples, which I write before I start coding, thus forcing me to have a better understanding of what I am doing.
