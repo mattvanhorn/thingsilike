@@ -7,7 +7,7 @@ date: 2013/09/19
 Kevin Liddle wrote an [interesting post](http://blog.8thlight.com/kevin-liddle/2013/09/18/a-case-against-cucumber.html) this morning, making a case against [Cucumber](http://cukes.info). Like many people who hate on Cucumber, I think he misses the point by a little ways. Allow me to mount a defense of Cucumber by slightly editing some of his stories.
 
     Given I am a product owner
-    When there are awesome dukes
+    When there are awesome cukes
     Then the entire team has a shared understanding of acceptance
 
 The point is *not* to provide some translation of code for non-technical managers.
@@ -19,7 +19,7 @@ When you have a ubiquitous language, you no longer have to worry about some disc
 So what other misconceptions do people have about cucumber?
 
     Given I am a product owner
-    When I know how to write awesome dukes
+    When I know how to write awesome cukes
     Then I am confident that I understand the problem
 
 Another benefit of using Cucumber is to force the stakeholder to actually think about what they mean. All too often, acceptance criteria becomes a sort of  "I know it when I see it" test, that a single developer would have a hard time with, never mind a whole team.
